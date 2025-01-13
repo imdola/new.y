@@ -1,0 +1,163 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FAQ Sections</title>
+        <!-- Google Font CDN  -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    
+        <!-- DaisyUi CDN  -->
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.22/dist/full.min.css" rel="stylesheet" type="text/css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+    
+        <!-- Remix Icon CDN  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.css"
+            integrity="sha512-6p+GTq7fjTHD/sdFPWHaFoALKeWOU9f9MPBoPnvJEWBkGS4PKVVbCpMps6IXnTiXghFbxlgDE8QRHc3MU91lJg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+        <style>
+            .lexend {
+                font-family: "Lexend", serif;
+            }
+    
+            .dropdown-enter {
+                opacity: 0;
+                transform: translateY(-10px);
+                transition: opacity 0.3s ease, transform 0.3s ease;
+            }
+    
+            .dropdown-enter-active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        </style>
+    
+    </head>
+    
+    <body class="lexend">
+        <!-- ==================Nav bar section starts==================  -->
+    
+        <header class="sticky top-0 bg-white z-40 drop-shadow-md">
+            <div class="navbar bg-base-100 bg-[#F9F7F3]">
+                <!-- nav left start here  -->
+                <div class="navbar-start py-2">
+                    <button onclick="location.href='index.html';"
+                        class="hidden lg:block btn ml-10 px-10 bg-[#B4F461] border-none text-xl text-black">Home</button>
+                </div>
+                <!-- nav bar left ends here  -->
+    
+                <!-- nav bar center starts here  -->
+                <div class="navbar-center">
+                    <div class="flex justify-center items-center">
+                        <img src="./images/logo.png" alt="" class="w-9 h-9 mt-3">
+                        <h1 class="text-2xl mt-3 py-2  lg:text-4xl ml-5 lg:mt-2 font-semibold">Donate Bangladesh</h1>
+                    </div>
+                </div>
+                <!-- nav bar center ends here  -->
+    
+                <!-- nav bar right starts here  -->
+                <div class="navbar-end">
+                    <div class="hidden lg:block">
+                        <div
+                            class="flex justify-center items-center gap-2 lg:mr-10 text-xl font-medium lg:text-2xl mt-2 py-2 cursor-pointer">
+                            <div>
+                                <img src="./images/coin.png" alt="">
+                            </div>
+                            <span>5500 BDT</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- nav bar right ends here  -->
+    
+                <!-- Menu icon for mobile device  -->
+                <i id="menu-icon"
+                    class="block ri-menu-3-line text-xl font-semibold mr-3 my-1 py-2 cursor-pointer lg:hidden"></i>
+            </div>
+    
+            <!-- Drop-down starts  -->
+            <div id="dropdown-menu" class="block flex flex-col bg-[#F9F7F3] text-black w-2/3 px-4 py-2 mx-auto lg:hidden">
+                <button onclick="location.href='index.html';"
+                    class="text-sm text-black font-medium py-2 hover:text-gray-500">Home</button>
+                <div
+                    class="flex items-center space-x-2 bg-[#B4F461] px-3 py-2 rounded-full hover:bg-gray-300 text-black mx-auto cursor-pointer">
+                    <img src="./images/coin.png" alt="" class="w-4 h-4">
+                    <span>5500 BDT</span>
+                </div>
+            </div>
+        </header>
+        <br>
+        <br>
+        <!-- ==================Nav bar section ends==================  -->
+        <main>
+            <div class="flex justify-center lg:justify-start gap-1">
+                <h1 class="text-4xl font-bold ml-3 py-5 px-5">Important FAQ</h1>
+                <img src="./images/customer-service (1).png" alt="" class="w-9 h-9 mt-5">
+            </div>
+            <!-- No 1  -->
+            <div class="collapse collapse-arrow bg-white px-5 border-2 border-solid border-gray-300">
+                <input type="radio" name="my-accordion-2" checked="checked" />
+                <div class="collapse-title text-xl font-medium">What is Document Object Model (DOM)?</div>
+                <div class="collapse-content">
+                    <p>The Document Object Model (DOM) is a programming interface for web documents. It represents the
+                        structure of a webpage as a tree-like hierarchy of objects, allowing developers to access, modify,
+                        and manipulate the content, structure, and styles of a web document dynamically.</p>
+                </div>
+            </div>
+    
+            <!-- No 2  -->
+            <div class="collapse collapse-arrow bg-white px-5 border-2 border-solid border-gray-300">
+                <input type="radio" name="my-accordion-2" />
+                <div class="collapse-title text-xl font-medium">How do you select an element for DOM?</div>
+                <div class="collapse-content">
+                    <p>In DOM one can select elements using various JavaScript methods provided by the document object. Each
+                        method is designed to target specific elements based on their tag name, class, ID, or other
+                        attributes.</p>
+                </div>
+            </div>
+    
+            <!-- No 3  -->
+            <div class="collapse collapse-arrow bg-white px-5 border-2 border-solid border-gray-300">
+                <input type="radio" name="my-accordion-2" />
+                <div class="collapse-title text-xl font-medium">What is event delegation in the context of the DOM and why
+                    is it useful?</div>
+                <div class="collapse-content">
+                    <p>Event delegation is a technique in the DOM where a single event listener is attached to a parent
+                        element to manage events for its child elements. Instead of attaching individual event listeners to
+                        each child element, the parent element listens for events that bubble up from its children. This
+                        works because of event bubbling, a process where an event starts at the target element and
+                        propagates upward through its parent elements in the DOM hierarchy. <br>
+                        How Event Delegation Works
+                        When an event occurs on a child element, it bubbles up to its parent (and further ancestors, unless
+                        stopped).
+                        The parent element can listen for the event and determine which child element triggered it by
+                        inspecting the event.target property.
+                        Using conditions, you can apply logic only to specific child elements or types of events. <br>
+                        Event delegation is useful because it simplifies event handling, improves performance, and makes
+                        your code more maintainable and scalable.</p>
+                </div>
+            </div>
+    
+            <!-- No-4  -->
+            <div class="collapse collapse-arrow bg-white px-5 border-2 border-solid border-gray-300">
+                <input type="radio" name="my-accordion-2" />
+                <div class="collapse-title text-xl font-medium">How do you manipulate an element's attributes and styles
+                    using the DOM?</div>
+                <div class="collapse-content">
+                    <p>Using getAttribute(), setAttribute(), and removeAttribute() to manage element attributes,
+                        classList methods (add, remove, toggle, contains) for class manipulation
+                        the style property to set or modify inline styles directly,
+                        getComputedStyle() to retrieve computed styles applied to an element one can dynamically combining
+                        these techniques allows to create interactive and visually engaging webpages.</p>
+                </div>
+            </div>
+            <br>
+        </main>
+    
+    
+        <!-- <script src="./js/index.js"></script>  -->
+         <!-- Ekhane asole js file tar dorkar nai bcuz ei page e js er kono kaj nai. just blog button chap dile ashte hobe abar home button e chap dile home e jete hobe. js file add kora hole history part ta page e dekha jabe jetar asole kono dorkar nai -->
+    </body>
+    
+    </html>
