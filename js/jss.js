@@ -34,7 +34,7 @@ const closeModalButton = document.getElementById("close-modal");
 // History Section 
 const historySection = document.createElement("div");
 document.body.appendChild(historySection);
-historySection.className = "p-5 bg-gray-100"; //ekhane hidden hobe
+historySection.className = "p-5 bg-gray-100"; 
 historySection.innerHTML = `<h2 class='text-2xl font-bold'>Donation History</h2><ul id='donation-history' class='list-disc pl-5'></ul>`;
 const donationHistoryList = document.getElementById("donation-history");
 
