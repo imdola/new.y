@@ -1,8 +1,22 @@
 // Nav bar section js starts
+// const menuIcon = document.getElementById('menu-icon');
+// const dropdownMenu = document.getElementById('dropdown-menu');
+
+// menuIcon.addEventListener('click', function () {
+//   if (dropdownMenu.classList.contains('hidden')) {
+//     dropdownMenu.classList.remove('hidden');
+//     dropdownMenu.classList.add('dropdown-enter', 'dropdown-enter-active');
+//   } else {
+//     dropdownMenu.classList.add('hidden');
+//     dropdownMenu.classList.remove('dropdown-enter', 'dropdown-enter-active');
+//   }
+// });
 const menuIcon = document.getElementById('menu-icon');
 const dropdownMenu = document.getElementById('dropdown-menu');
 
-menuIcon.addEventListener('click', function () {
+// Toggle dropdown menu visibility when the hamburger icon is clicked
+menuIcon.addEventListener('click', function (event) {
+  event.stopPropagation(); // Prevent the click from propagating to the document
   if (dropdownMenu.classList.contains('hidden')) {
     dropdownMenu.classList.remove('hidden');
     dropdownMenu.classList.add('dropdown-enter', 'dropdown-enter-active');
@@ -11,6 +25,20 @@ menuIcon.addEventListener('click', function () {
     dropdownMenu.classList.remove('dropdown-enter', 'dropdown-enter-active');
   }
 });
+
+// Close dropdown menu when clicking outside
+document.addEventListener('click', function () {
+  if (!dropdownMenu.classList.contains('hidden')) {
+    dropdownMenu.classList.add('hidden');
+    dropdownMenu.classList.remove('dropdown-enter', 'dropdown-enter-active');
+  }
+});
+
+// Prevent dropdown menu clicks from closing it
+dropdownMenu.addEventListener('click', function (event) {
+  event.stopPropagation(); // Prevent the click from propagating to the document
+});
+
 // Nav bar section js ends
 
 // Main js code starts 
