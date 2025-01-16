@@ -75,7 +75,16 @@ function handleDonation(section, inputElement, balanceElement) {
   // show donation history 
 
   const date = new Date();
-  const formattedDate = date.toLocaleString("en-GB", { timeZone: "Asia/Dhaka" });
+  const formattedDate = date.toLocaleString("en-GB", {
+    timeZone: "Asia/Dhaka",
+    weekday: "short", 
+    day: "numeric", 
+    month: "numeric", 
+    year: "numeric", 
+    hour: "2-digit", 
+    minute: "2-digit", 
+    second: "2-digit",
+  });
   const historyItem = document.createElement("li");
   historyItem.className =
     "px-5 py-4 bg-gray-100 rounded-lg border border-gray-300 drop-shadow-lg";
