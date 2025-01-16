@@ -89,7 +89,7 @@ function handleDonation(section, inputElement, balanceElement) {
   historyItem.className =
     "px-5 py-4 bg-gray-100 rounded-lg border border-gray-300 drop-shadow-lg";
   historyItem.innerHTML = `
-    <p class="text-lg"> <b>${donationAmount} BDT</b> is Donated for <span class="font-semibold">${section}</span></p>
+    <p class="text-lg"> <b>${donationAmount} BDT</b> is Donated for <span class="font-medium">${section}</span></p>
     <p class="text-sm text-gray-600">Date: ${formattedDate} (Bangladesh Standard Time)</p>`;
   donationHistoryList.appendChild(historyItem);
 
