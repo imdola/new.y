@@ -36,8 +36,7 @@ document.body.appendChild(historySection);
 historySection.className = "px-8 py-4";
 historySection.innerHTML = `
   <div class="p-6 bg-white rounded-lg drop-shadow-lg">
-    <h2 class="text-2xl font-bold mb-4">Donation History</h2>
-    <ul id="donation-history" class="space-y-4"></ul>
+   <ul id="donation-history" class="space-y-4"></ul>
   </div>`;
 const donationHistoryList = document.getElementById("donation-history");
 
