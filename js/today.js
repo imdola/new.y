@@ -13,7 +13,8 @@ menuIcon.addEventListener('click', function () {
 });
 // Nav bar section js ends
 
-// Get references to all necessary DOM elements
+// Main js code starts 
+
 const websiteBalanceElement = document.getElementById("website-balance");
 const noakhaliBalanceElement = document.getElementById("noakhali-balance");
 const feniBalanceElement = document.querySelector(".feni-balance");
@@ -30,59 +31,65 @@ const quotaButton = document.getElementById("quota-button");
 const modal = document.getElementById("my_modal_1");
 const closeModalButton = document.getElementById("close-modal");
 
-// History Section
+// history section making 
+
 const historySection = document.createElement("div");
 document.body.appendChild(historySection);
 historySection.className = "px-8 py-4";
 historySection.innerHTML = `
-  <div class="p-6 bg-white rounded-lg drop-shadow-lg">
+  <div class="p-6 bg-white rounded-lg drop-shadow">
    <ul id="donation-history" class="space-y-4"></ul>
   </div>`;
 const donationHistoryList = document.getElementById("donation-history");
 
 const mainSection = document.getElementById("main-section");
 
-// Common function to handle donation
+// donation handle common facts
+
 function handleDonation(section, inputElement, balanceElement) {
   const donationAmount = parseFloat(inputElement.value);
   const websiteBalance = parseFloat(websiteBalanceElement.textContent);
 
-  // Validate donation amount
+  //  making donation valid 
+
   if (isNaN(donationAmount) || donationAmount <= 0) {
     alert("Oops!! Please Give a Valid Input!!");
     return;
   }
 
   if (donationAmount > websiteBalance) {
-    alert("Oops!! You Exceed The Balance!! Try Later!");
+    alert("Oops!! You Exceed The Balance!! Try Again Later!!");
     return;
   }
 
-  // Update balances
+  // update balance 
+
   const currentSectionBalance = parseFloat(balanceElement.textContent);
   balanceElement.textContent = (currentSectionBalance + donationAmount);
   websiteBalanceElement.textContent = (websiteBalance - donationAmount);
 
-  // Show confirmation modal
+  // modal 
+
   modal.showModal();
 
-  // Save donation history
+  // show donation history 
+
   const date = new Date();
   const formattedDate = date.toLocaleString("en-GB", { timeZone: "Asia/Dhaka" });
   const historyItem = document.createElement("li");
   historyItem.className =
-    "p-4 bg-gray-100 rounded-lg border border-gray-300 drop-shadow-md";
+    "px-5 py-4 bg-gray-100 rounded-lg border border-gray-300 drop-shadow-lg";
   historyItem.innerHTML = `
     <p class="text-lg">${donationAmount} BDT is Donated for <span class="font-semibold">${section}</span></p>
     <p class="text-sm text-gray-600">Date: ${formattedDate} (Bangladesh Standard Time)</p>`;
   donationHistoryList.appendChild(historyItem);
 
-  // Clear the input field
+  // input field clear
   inputElement.value = "";
 }
 
-// Attach event listeners to buttons
-noakhaliButton.addEventListener("click", () => {
+// attach event listeners to buttons
+noakhaliButton.addEventListener("click", function (){
   handleDonation(
     "Donate for Flood at Noakhali, Bangladesh",
     noakhaliInput,
@@ -90,7 +97,7 @@ noakhaliButton.addEventListener("click", () => {
   );
 });
 
-feniButton.addEventListener("click", () => {
+feniButton.addEventListener("click", function (){
   handleDonation(
     "Donate for Flood Relief in Feni, Bangladesh",
     feniInput,
@@ -98,7 +105,7 @@ feniButton.addEventListener("click", () => {
   );
 });
 
-quotaButton.addEventListener("click", () => {
+quotaButton.addEventListener("click", function (){
   handleDonation(
     "Aid for Injured in the Quota Movement",
     quotaInput,
@@ -107,7 +114,7 @@ quotaButton.addEventListener("click", () => {
 });
 
 // Close modal on button click
-closeModalButton.addEventListener("click", () => {
+closeModalButton.addEventListener("click", function () {
   modal.close();
 });
 
@@ -116,6 +123,7 @@ const historyButton = document.getElementById("history-button");
 const donationButton = document.getElementById("donation-button");
 
 historyButton.addEventListener("click", function () {
+ 
   // Show history & hide donation
   historySection.style.display = "block";
   mainSection.style.display = "none";
