@@ -31,13 +31,13 @@ syncBalances();
 const observer = new MutationObserver(syncBalances);
 observer.observe(websiteBalanceElement, { childList: true });
 
-//=========================================================================================
+
 
 // Main js code starts 
 
 const noakhaliBalanceElement = document.getElementById("noakhali-balance");
-const feniBalanceElement = document.querySelector(".feni-balance");
-const quotaBalanceElement = document.querySelector(".quota-balance");
+const feniBalanceElement = document.getElementById("feni-balance");
+const quotaBalanceElement = document.getElementById("quota-balance");
 
 const noakhaliInput = document.getElementById("noakhali-input");
 const feniInput = document.getElementById("feni-input");
