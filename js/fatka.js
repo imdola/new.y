@@ -1,25 +1,40 @@
 // Nav bar section js starts
-const menuIcon = document.getElementById('menu-icon');
-const dropdownMenu = document.getElementById('dropdown-menu');
+const menuIcon = document.getElementById("menu-icon");
+const dropdownMenu = document.getElementById("dropdown-menu");
+const websiteBalanceElement = document.getElementById("website-balance");
+const websiteBalanceDropdownElement = document.getElementById("website-balance-dropdown");
 
-menuIcon.addEventListener('click', function () {
-  if (dropdownMenu.classList.contains('hidden')) {
-    dropdownMenu.classList.remove('hidden');
-    dropdownMenu.classList.add('dropdown-enter', 'dropdown-enter-active');
-  } else {
-    dropdownMenu.classList.add('hidden');
-    dropdownMenu.classList.remove('dropdown-enter', 'dropdown-enter-active');
+// Close the dropdown menu when clicking outside
+function closeDropdownOnOutsideClick(event) {
+  if (!dropdownMenu.contains(event.target) &&
+    event.target !== menuIcon) {
+    dropdownMenu.classList.add("hidden");
   }
+}
+
+menuIcon.addEventListener("click", function () {
+  dropdownMenu.classList.toggle("hidden");
 });
+
+document.addEventListener("click", closeDropdownOnOutsideClick);
+
+// Ensure balance syncing between website-balance and website-balance-dropdown
+function syncBalances() {
+  const currentBalance = parseFloat(websiteBalanceElement.textContent);
+  websiteBalanceDropdownElement.textContent = currentBalance;
+}
+
+// Run sync initially and whenever balance updates
+syncBalances();
+
+// Observe changes in website-balance and update website-balance-dropdown
+const observer = new MutationObserver(syncBalances);
+observer.observe(websiteBalanceElement, { childList: true });
 
 //=========================================================================================
 
-
-// Nav bar section js ends
-
 // Main js code starts 
 
-const websiteBalanceElement = document.getElementById("website-balance");
 const noakhaliBalanceElement = document.getElementById("noakhali-balance");
 const feniBalanceElement = document.querySelector(".feni-balance");
 const quotaBalanceElement = document.querySelector(".quota-balance");
